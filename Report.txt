@@ -1,0 +1,44 @@
+Overview of the analysis: Explain the purpose of this analysis.
+    the objective was to predict whether or not applicants for funding will be successful 
+    using the knowledge of machine learning and neural networks of the existing data.
+
+Data Preprocessing
+What variable(s) are considered the target(s) for your model?
+    the following are considered
+       IS_Successful
+What variable(s) are considered to be the features for your model?
+    The following are considered
+        EIN
+        Name
+        Application type   
+        Affiliation
+        Classificaiton
+        Use_Case
+        Organiziation
+        Status
+        Income_Amt
+        Special_Consideration
+        Aks_Amt
+        Status
+What variable(s) are neither targets nor features, and should be removed from the input data?
+    Following were removed
+        EIN
+        Name
+        Status = 0 
+Compiling, Training, and Evaluating the Model
+    The "Is successful" variable was our y-value
+    The variables used as features are application type, affiliation, classificaiton, use case, organiziation, income amount, special considerations, and ask amount
+How many neurons, layers, and activation functions did you select for your neural network model, and why?
+    I used 5 layers. in order, they were Relu @ 80, tahn @ 55, tahn @35, Relu @ 25, and finally Signoid @ 1
+        nn_model.add(tf.keras.layers.Dense(units=80, activation="relu", input_dim=dim))
+        nn_model.add(tf.keras.layers.Dense(units=55, activation="tanh"))
+        nn_model.add(tf.keras.layers.Dense(units=35, activation="tanh"))
+        nn_model.add(tf.keras.layers.Dense(units=25, activation="relu"))
+        nn_model.add(tf.keras.layers.Dense(units=1, activation="sigmoid"))
+Were you able to achieve the target model performance?
+    I was not. the best model i could confidue ended at .72.90
+What steps did you take to try and increase model performance?
+    tried to increase the activation, change the actiation models
+Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
+    After trying different activation models was wondering need to get some more knowledge of the the feature set to be  
+    able to improve the precition with the dataset and remove unwanted 
